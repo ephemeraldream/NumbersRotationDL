@@ -1,15 +1,12 @@
-function rotatedImage = digitRotation(image)
-    close all;
-% clear all;
+function rotatedImage = digitRotation(image, angle)
 
-img = 'cameraman.tif';
 
-input_image =double(imread(img))./255;
+input_image = image;
 
-H=size(input_image,1);  % height
-W=size(input_image,2);  % width
+H=size(input_image,1);
+W=size(input_image,2); 
 
-th=120*pi/180; %Rotate 120 degrees
+th=angle*pi/180;
 
 s0 = 2;
 s1 = 2;
@@ -52,7 +49,7 @@ for i=1:W
 
             dx = a - x1;
             dy = b - y1;
-            rotatedImage(j, i) = bicubicInterpolate(P, dx, dy);
+            rotatedImage(j, i) = bicubic(P, dx, dy);
         end
     end
 end
@@ -60,15 +57,15 @@ end
 
 
 
-function q = cubicInterpolate(p, x)
+function q = cubic(p, x)
 q = p(2) + 0.5 * x*(p(3) - p(1) + x*(2.0*p(1) - 5.0*p(2) + 4.0*p(3) - p(4) + x*(3.0*(p(2) - p(3)) + p(4) - p(1))));
 end 
 
 
-function q = bicubicInterpolate(p, x, y)
-q1 = cubicInterpolate(p(1,:), x);
-q2 = cubicInterpolate(p(2,:), x);
-q3 = cubicInterpolate(p(3,:), x);
-q4 = cubicInterpolate(p(4,:), x);
-q = cubicInterpolate([q1, q2, q3, q4], y);
+function q = bicubic(p, x, y)
+q1 = cubic(p(1,:), x);
+q2 = cubic(p(2,:), x);
+q3 = cubic(p(3,:), x);
+q4 = cubic(p(4,:), x);
+q = cubic([q1, q2, q3, q4], y);
 end
