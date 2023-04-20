@@ -1,3 +1,9 @@
+
+
+
+
+
+
 [XTrain,~,YTrain] = digitTrain4DArrayData;
 [XValidation,~,YValidation] = digitTest4DArrayData;
 layers = [
@@ -37,6 +43,8 @@ options = trainingOptions('sgdm', ...
 net = trainNetwork(XTrain,YTrain,layers,options);
 YPredicted = predict(net,XValidation);
 predictionError = YValidation - YPredicted;
+regressionTrained = net;
+save regressionTrained
 
 
 thr = 10;
@@ -44,6 +52,8 @@ numCorrect = sum(abs(predictionError) < thr);
 numValidationImages = numel(YValidation);
 
 accuracy = numCorrect/numValidationImages
+
+
 
 
 

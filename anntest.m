@@ -34,7 +34,8 @@ options = trainingOptions('sgdm', ...
     'Plots','training-progress');
 
 net = trainNetwork(Xtrain, Ytrain,layers,options);
-
+ClassificationTrained = net;
+save ClassificationTrained
 YPred = classify(net,Xtest);
 YValidation = Ytest;
 accuracy = mean(YPred == YValidation);
