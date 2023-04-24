@@ -40,6 +40,10 @@ However, here is rotation using my function:
 
 We see that for some reason, the image was zoomed in by 10-15%. Nevertheless, the rotation happens. 
 
+```
+customLayer.m
+```
+
 The customLayer was implemented in two ways. I tried to incorporate my function, but the problem with small numbers, so it needs to be optimized further. 
 So, I eventually put imrotate() inside my custorLayer. Backprop is also implemented (in a trivial way). 
 
