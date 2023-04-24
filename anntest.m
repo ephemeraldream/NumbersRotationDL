@@ -16,9 +16,11 @@ Xtest = permute(Xtest, [1,2,4,3]);
 Ytest = categorical(test.labels);
 
 inputSize = [28,28,1];
-
+customLayer = customLayer;
+customLayer.angle = 100;
 layers = [
     imageInputLayer(inputSize)
+    customLayer
     convolution2dLayer(5,20)
     batchNormalizationLayer
     reluLayer

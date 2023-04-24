@@ -1,10 +1,10 @@
 function rotatedImage = digitRotation(image, angle)
 
 
-input_image = image;
+input = image;
 
-H=size(input_image,1);
-W=size(input_image,2); 
+H=size(input,1);
+W=size(input,2); 
 
 th=angle*pi/180;
 
@@ -25,7 +25,7 @@ RST = [ (s0*cos(th))   (-s1*sin(th)) ((s0*x0*cos(th))-(s1*x1*sin(th))); ...
 M=inv(T)*RST;
 N = inv(M);
 
-rotatedImage=zeros(H,W,size(input_image,3));
+rotatedImage=zeros(H,W,size(input,3));
 
 for i=1:W
     for j=1:H
@@ -44,7 +44,7 @@ for i=1:W
 
         if ((x1 >= 2) && (y1 >= 2) && (x1 <= W-2) && (y1 <= H-2))
 
-            P = input_image(y1-1:y1+2, x1-1:x1+2);
+            P = input(y1-1:y1+2, x1-1:x1+2);
 
 
             dx = a - x1;

@@ -7,6 +7,7 @@
 [XTrain,~,YTrain] = digitTrain4DArrayData;
 [XValidation,~,YValidation] = digitTest4DArrayData;
 layers = [
+    
     imageInputLayer([28 28 1])
     convolution2dLayer(3,8,'Padding','same')
     batchNormalizationLayer
