@@ -51,6 +51,7 @@ So, I eventually put imrotate() inside my custorLayer. Backprop is also implemen
 
 
 # Comments by the Reviewer
+
 * Good job, all goals accomplished
 * All networks performed as expected for the architecture chosen
 * Good knowledge of the layers and their proper placement in the model
