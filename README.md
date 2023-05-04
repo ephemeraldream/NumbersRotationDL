@@ -50,3 +50,14 @@ So, I eventually put imrotate() inside my custorLayer. Backprop is also implemen
 
 
 
+# Comments by the Reviewer
+* Good job, all goals accomplished
+* All networks performed as expected for the architecture chosen
+* Good knowledge of the layers and their proper placement in the model
+* I think you may have squeezed a bit more performance by allowing more epochs. Validation never
+  terminated training, and I have a feeling that the net was not yet fully trained. 
+* A very concise and readable implementation of rotation. It is much less complicated
+  that the one ChatGPT wrote for us, and also that I found by Google search.
+  As I recall, you used a book to study the algorithm. Would you please send me the reference?
+
+## Score: 100%
