@@ -60,5 +60,6 @@ So, I eventually put imrotate() inside my custorLayer. Backprop is also implemen
 * A very concise and readable implementation of rotation. It is much less complicated
   that the one ChatGPT wrote for us, and also that I found by Google search.
   As I recall, you used a book to study the algorithm. Would you please send me the reference?
+* NOTE: Used Emacs to indent your code, easier to read this way.
 
 ## Score: 100%
